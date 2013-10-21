@@ -42,6 +42,3 @@
                           (groovy-electric-mode)))
 
 
-;;; JDEE for Java
-(add-to-list 'load-path "~/Programs/jdee-2.4.1/lisp")
-(load "jde")

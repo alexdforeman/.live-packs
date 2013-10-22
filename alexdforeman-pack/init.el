@@ -51,6 +51,7 @@
                           (groovy-electric-mode)))
 
 
+<<<<<<< HEAD
 ;;; emacs-eclim
 (require 'eclim)
 (global-eclim-mode)
@@ -70,3 +71,5 @@
 (require 'company-emacs-eclim)
 (company-emacs-eclim-setup)
 (global-company-mode t)
+=======
+>>>>>>> 2f280416b2c861fd1ae2298aee14dbc6092ed097

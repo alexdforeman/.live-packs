@@ -3,6 +3,15 @@
 ;; User this file to initiate the pack configuration.
 ;; See README for more information.
 
+;;; marmalade
+(require 'package)
+(add-to-list 'package-archives
+             '("marmalade" .
+               "http://marmalade-repo.org/packages/"))
+(add-to-list 'package-archives
+               '("melpa" . "http://melpa.milkbox.net/packages/") t)
+(package-initialize)
+
 ;; Load bindings config
 (live-load-config-file "bindings.el")
 
@@ -42,6 +51,22 @@
                           (groovy-electric-mode)))
 
 
-;;; JDEE for Java
-(add-to-list 'load-path "~/Programs/jdee-2.4.1/lisp")
-(load "jde")
+;;; emacs-eclim
+(require 'eclim)
+(global-eclim-mode)
+(require 'eclimd)
+(setq help-at-pt-display-when-idle t)
+(setq help-at-pt-timer-delay 0.1)
+(help-at-pt-set-timer)
+;; regular auto-complete initialization
+(require 'auto-complete-config)
+(ac-config-default)
+
+;; add the emacs-eclim source
+(require 'ac-emacs-eclim-source)
+(ac-emacs-eclim-config)
+
+(require 'company)
+(require 'company-emacs-eclim)
+(company-emacs-eclim-setup)
+(global-company-mode t)

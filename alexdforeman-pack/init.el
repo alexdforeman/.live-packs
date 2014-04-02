@@ -49,3 +49,8 @@
           '(lambda ()
              (require 'groovy-electric)
                           (groovy-electric-mode)))
+
+;;; X version of emacs tab completion does not work.
+;;; this is the fix from: http://stackoverflow.com/questions/18278310/emacs-ansi-term-not-tab-completing
+(add-hook 'term-mode-hook (lambda()
+        (setq yas-dont-activate t)))
